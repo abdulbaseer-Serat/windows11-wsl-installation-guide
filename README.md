@@ -1,4 +1,4 @@
-# windows11-wsl-installation-guide
+# windows11 wsl installation guide
 A complete step-by-step guide for installing Windows Subsystem for Linux (WSL2) on Windows 11.
 ## What is WSL?
 
@@ -13,3 +13,18 @@ Examples:
 - Use Linux development tools
 - Access Linux files from Windows Explorer
 ```
+## Repository Structure
+windows11-wsl-installation-guide/
+│
+├── README.md
+├── images/
+│   ├── step1-powershell.png
+│   ├── step2-wsl-install.png
+│   ├── step3-restart.png
+│   └── step4-ubuntu-setup.png
+│
+├── docs/
+│   ├── troubleshooting.md
+│   └── common-commands.md
+│
+└── LICENSE
