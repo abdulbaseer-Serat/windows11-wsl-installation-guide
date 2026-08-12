@@ -14,6 +14,7 @@ Examples:
 - Access Linux files from Windows Explorer
 ```
 ## Repository Structure
+```cmd
 windows11-wsl-installation-guide/
 │
 ├── README.md
@@ -22,3 +23,4 @@ windows11-wsl-installation-guide/
 │   ├── step2-wsl-install.png
 │   ├── step3-restart.png
 │   └── step4-ubuntu-setup.png
+```
