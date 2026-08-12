@@ -13,51 +13,118 @@ Examples:
 - Use Linux development tools
 - Access Linux files from Windows Explorer
 ```
-# Windows 11 WSL2 Installation Guide
 
-A complete step-by-step guide for installing Windows Subsystem for Linux (WSL2) on Windows 11.
 
-## What is WSL?
+# Prerequisites
 
-Windows Subsystem for Linux (WSL) allows you to run a Linux environment directly on Windows without using a traditional virtual machine.
+Before installing WSL2, ensure:
 
-## Prerequisites
+- Windows 11 is installed
+- Administrator access is available
+- Internet connection is available
+- CPU virtualization is enabled in BIOS/UEFI
 
-- Windows 11
-- Administrator Access
-- Internet Connection
-- Virtualization Enabled in BIOS
+---
 
-## Step 1: Open PowerShell as Administrator
+# Step 1: Check Virtualization Status
 
-1. Click Start
-2. Search for PowerShell
-3. Right-click PowerShell
-4. Select Run as Administrator
+1. Press:
 
-## Step 2: Install WSL
+```text
+Ctrl + Shift + Esc
+```
 
-Run:
+2. Open **Task Manager**
+3. Select **Performance**
+4. Click **CPU**
+
+Verify:
+
+```text
+Virtualization: Enabled
+```
+
+If it shows Disabled, enable virtualization in BIOS.
+
+---
+
+# Step 2: Enable Virtualization in BIOS
+
+## Intel Systems
+
+Enable:
+
+```text
+Intel Virtualization Technology (VT-x)
+```
+
+## AMD Systems
+
+Enable:
+
+```text
+AMD-V
+```
+
+or
+
+```text
+SVM Mode
+```
+
+Save changes and restart Windows.
+
+---
+
+# Step 3: Enable Virtual Machine Platform
+
+Open PowerShell as Administrator:
+
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -All
+```
+
+Restart Windows when prompted.
+
+---
+
+# Step 4: Enable Windows Subsystem for Linux
+
+Open PowerShell as Administrator:
+
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -All
+```
+
+Restart Windows.
+
+---
+
+# Step 5: Install WSL2 Automatically
+
+Open PowerShell as Administrator:
 
 ```powershell
 wsl --install
 ```
 
-This command:
+This command automatically:
 
-- Enables WSL
+- Enables Windows Subsystem for Linux
 - Enables Virtual Machine Platform
 - Downloads Linux Kernel
-- Sets WSL2 as default
+- Sets WSL2 as Default
 - Installs Ubuntu
 
-## Step 3: Restart Windows
+Restart the computer after installation.
 
-Restart your computer when prompted.
+---
 
-## Step 4: Configure Ubuntu
+# Step 6: Configure Ubuntu
 
-After reboot:
+After reboot, launch Ubuntu.
+
+Linux will ask for:
 
 ```text
 Enter new UNIX username:
@@ -69,53 +136,67 @@ Example:
 basir
 ```
 
-Set a password and confirm it.
+Then enter a password.
 
-## Step 5: Update Ubuntu
+Example:
+
+```text
+New password:
+Retype new password:
+```
+
+You will now enter the Ubuntu terminal.
+
+---
+
+# Step 7: Update Ubuntu
+
+Update package repositories:
 
 ```bash
 sudo apt update
+```
+
+Upgrade installed packages:
+
+```bash
 sudo apt upgrade -y
 ```
 
-## Verify Installation
+---
+
+# Step 8: Verify WSL Installation
+
+Check WSL status:
 
 ```powershell
 wsl --status
 ```
 
+Expected output:
+
+```text
+Default Version: 2
+```
+
+Check installed distributions:
+
 ```powershell
 wsl --list --verbose
 ```
 
-Expected Output:
+Example:
 
 ```text
-Default Version: 2
-Ubuntu Running Version 2
+NAME      STATE     VERSION
+Ubuntu    Running   2
 ```
 
-## Useful Commands
+---
 
-Start WSL:
+# Install Other Linux Distributions
 
-```powershell
-wsl
-```
-
-Shutdown WSL:
-
-```powershell
-wsl --shutdown
-```
-
-Update WSL:
-
-```powershell
-wsl --update
-```
-
-List Distros:
+Show available distributions:
 
 ```powershell
 wsl --list --online
@@ -127,25 +208,164 @@ Install Debian:
 wsl --install -d Debian
 ```
 
-Install Kali:
+Install Kali Linux:
 
 ```powershell
 wsl --install -d Kali-Linux
 ```
 
-## Troubleshooting
+Install openSUSE:
 
-### Error 0x80370102
+```powershell
+wsl --install -d openSUSE-Leap-15.6
+```
 
-Enable virtualization in BIOS:
+---
 
-- Intel VT-x
-- AMD-V
-- SVM Mode
+# Useful WSL Commands
 
-Then restart the system.
+## Start WSL
 
-## References
+```powershell
+wsl
+```
 
-Microsoft WSL Documentation:
-https://learn.microsoft.com/windows/wsl/install
+## Shutdown WSL
+
+```powershell
+wsl --shutdown
+```
+
+## Update WSL
+
+```powershell
+wsl --update
+```
+
+## Check Status
+
+```powershell
+wsl --status
+```
+
+## List Installed Distributions
+
+```powershell
+wsl --list --verbose
+```
+
+## Set Default WSL Version
+
+```powershell
+wsl --set-default-version 2
+```
+
+---
+
+# Access Linux Files from Windows
+
+Inside Ubuntu:
+
+```bash
+explorer.exe .
+```
+
+This opens the current Linux directory in Windows File Explorer.
+
+---
+
+# Troubleshooting
+
+## Error 0x80370102
+
+### Cause
+
+Virtualization is disabled in BIOS.
+
+### Solution
+
+Enable one of the following:
+
+Intel:
+
+```text
+Intel Virtualization Technology (VT-x)
+```
+
+AMD:
+
+```text
+AMD-V
+SVM Mode
+```
+
+Restart and try again.
+
+---
+
+## WSL Not Starting
+
+Restart WSL:
+
+```powershell
+wsl --shutdown
+```
+
+Then:
+
+```powershell
+wsl
+```
+
+---
+
+## Ubuntu Missing
+
+Install Ubuntu manually:
+
+```powershell
+wsl --install -d Ubuntu
+```
+
+---
+
+# One-Command Installation
+
+For most Windows 11 systems:
+
+```powershell
+wsl --install
+```
+
+After restarting:
+
+```powershell
+wsl --status
+```
+
+If the output shows:
+
+```text
+Default Version: 2
+```
+
+your WSL2 installation is successful.
+
+---
+
+# Author
+
+Abdul BASIR-SERAT
+
+## Technologies
+
+- Windows 11
+- WSL2
+- Ubuntu
+- PowerShell
+- Linux
+- Virtual Machine Platform
+
+## License
+
+MIT License
