@@ -15,7 +15,7 @@ Examples:
 ```
 
 
-# Prerequisites
+## Prerequisites
 
 Before installing WSL2, ensure:
 
@@ -26,7 +26,7 @@ Before installing WSL2, ensure:
 
 ---
 
-# Step 1: Check Virtualization Status
+## Step 1: Check Virtualization Status
 
 1. Press:
 
@@ -48,7 +48,7 @@ If it shows Disabled, enable virtualization in BIOS.
 
 ---
 
-# Step 2: Enable Virtual Machine Platform
+## Step 2: Enable Virtual Machine Platform
 
 Open PowerShell as Administrator:
 
@@ -59,7 +59,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -All
 
 ---
 
-# Step 3: Enable Windows Subsystem for Linux
+## Step 3: Enable Windows Subsystem for Linux
 
 Open PowerShell as Administrator:
 
@@ -69,7 +69,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 ---
 
-# Step 4: Install WSL2 Automatically
+## Step 4: Install WSL2 Automatically
 
 Open PowerShell as Administrator:
 
@@ -89,7 +89,7 @@ Restart the computer after installation.
 
 ---
 
-# Step 5: Configure Ubuntu or other lunix Operating system
+## Step 5: Configure Ubuntu or other lunix Operating system
 
 After reboot, launch Ubuntu.
 
@@ -102,7 +102,7 @@ Then enter a password.
 ```
 ---
 
-# Step 6: Update Ubuntu
+## Step 6: Update Ubuntu
 
 Update package repositories:
 
@@ -118,7 +118,7 @@ sudo apt upgrade -y
 
 ---
 
-# Step 7: Verify WSL Installation
+## Step 7: Verify WSL Installation
 
 Check WSL status:
 
@@ -139,7 +139,6 @@ wsl --list --verbose
 ```
 
 Example:
-
 ```text
 NAME      STATE     VERSION
 Ubuntu    Running   2
@@ -147,7 +146,7 @@ Ubuntu    Running   2
 
 ---
 
-# Install Other Linux Distributions
+## Install Other Linux Distributions
 
 Show available distributions:
 
