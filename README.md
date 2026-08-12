@@ -22,9 +22,3 @@ windows11-wsl-installation-guide/
 │   ├── step2-wsl-install.png
 │   ├── step3-restart.png
 │   └── step4-ubuntu-setup.png
-│
-├── docs/
-│   ├── troubleshooting.md
-│   └── common-commands.md
-│
-└── LICENSE
