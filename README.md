@@ -48,35 +48,7 @@ If it shows Disabled, enable virtualization in BIOS.
 
 ---
 
-# Step 2: Enable Virtualization in BIOS
-
-## Intel Systems
-
-Enable:
-
-```text
-Intel Virtualization Technology (VT-x)
-```
-
-## AMD Systems
-
-Enable:
-
-```text
-AMD-V
-```
-
-or
-
-```text
-SVM Mode
-```
-
-Save changes and restart Windows.
-
----
-
-# Step 3: Enable Virtual Machine Platform
+# Step 2: Enable Virtual Machine Platform
 
 Open PowerShell as Administrator:
 
@@ -84,11 +56,10 @@ Open PowerShell as Administrator:
 Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -All
 ```
 
-Restart Windows when prompted.
 
 ---
 
-# Step 4: Enable Windows Subsystem for Linux
+# Step 3: Enable Windows Subsystem for Linux
 
 Open PowerShell as Administrator:
 
@@ -96,11 +67,9 @@ Open PowerShell as Administrator:
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -All
 ```
 
-Restart Windows.
-
 ---
 
-# Step 5: Install WSL2 Automatically
+# Step 4: Install WSL2 Automatically
 
 Open PowerShell as Administrator:
 
@@ -120,7 +89,7 @@ Restart the computer after installation.
 
 ---
 
-# Step 6: Configure Ubuntu
+# Step 5: Configure Ubuntu or other lunix Operating system
 
 After reboot, launch Ubuntu.
 
@@ -128,28 +97,12 @@ Linux will ask for:
 
 ```text
 Enter new UNIX username:
-```
-
-Example:
-
-```text
-basir
-```
-
 Then enter a password.
 
-Example:
-
-```text
-New password:
-Retype new password:
 ```
-
-You will now enter the Ubuntu terminal.
-
 ---
 
-# Step 7: Update Ubuntu
+# Step 6: Update Ubuntu
 
 Update package repositories:
 
@@ -165,7 +118,7 @@ sudo apt upgrade -y
 
 ---
 
-# Step 8: Verify WSL Installation
+# Step 7: Verify WSL Installation
 
 Check WSL status:
 
@@ -220,152 +173,5 @@ Install openSUSE:
 wsl --install -d openSUSE-Leap-15.6
 ```
 
----
-
-# Useful WSL Commands
-
-## Start WSL
-
-```powershell
-wsl
-```
-
-## Shutdown WSL
-
-```powershell
-wsl --shutdown
-```
-
-## Update WSL
-
-```powershell
-wsl --update
-```
-
-## Check Status
-
-```powershell
-wsl --status
-```
-
-## List Installed Distributions
-
-```powershell
-wsl --list --verbose
-```
-
-## Set Default WSL Version
-
-```powershell
-wsl --set-default-version 2
-```
-
----
-
-# Access Linux Files from Windows
-
-Inside Ubuntu:
-
-```bash
-explorer.exe .
-```
-
-This opens the current Linux directory in Windows File Explorer.
-
----
-
-# Troubleshooting
-
-## Error 0x80370102
-
-### Cause
-
-Virtualization is disabled in BIOS.
-
-### Solution
-
-Enable one of the following:
-
-Intel:
-
-```text
-Intel Virtualization Technology (VT-x)
-```
-
-AMD:
-
-```text
-AMD-V
-SVM Mode
-```
-
-Restart and try again.
-
----
-
-## WSL Not Starting
-
-Restart WSL:
-
-```powershell
-wsl --shutdown
-```
-
-Then:
-
-```powershell
-wsl
-```
-
----
-
-## Ubuntu Missing
-
-Install Ubuntu manually:
-
-```powershell
-wsl --install -d Ubuntu
-```
-
----
-
-# One-Command Installation
-
-For most Windows 11 systems:
-
-```powershell
-wsl --install
-```
-
-After restarting:
-
-```powershell
-wsl --status
-```
-
-If the output shows:
-
-```text
-Default Version: 2
-```
-
-your WSL2 installation is successful.
-
----
-
-# Author
-
-Abdul BASIR-SERAT
-
-## Technologies
-
-- Windows 11
-- WSL2
-- Ubuntu
-- PowerShell
-- Linux
-- Virtual Machine Platform
-
-## License
-
-MIT License
+## References
+Microsoft WSL Documentation:https://learn.microsoft.com/windows/wsl/install
