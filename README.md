@@ -1,4 +1,4 @@
-# windows11 wsl installation guide
+# windows11 wsl installation guide.
 A complete step-by-step guide for installing Windows Subsystem for Linux (WSL2) on Windows 11.
 ## What is WSL?
 
@@ -173,4 +173,4 @@ wsl --install -d openSUSE-Leap-15.6
 ```
 
 ## References
-Microsoft WSL Documentation:https://learn.microsoft.com/windows/wsl/install
+Microsoft WSL Documentation:https://learn.microsoft.com/windows/wsl/install.
