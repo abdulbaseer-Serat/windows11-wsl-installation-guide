@@ -1,6 +1,6 @@
 
 # windows 11 wsl installation guide.
-![Static Badge](https://img.shields.io/badge/Field-Windows%20Subsystem-red)
+![Static Badge](https://img.shields.io/badge/Field-Windows%20Subsystem-red) https://img.shields.io/badge/github-repo-blue?logo=github
 
 A complete step-by-step guide for installing Windows Subsystem for Linux (WSL2) on Windows 11.
 
