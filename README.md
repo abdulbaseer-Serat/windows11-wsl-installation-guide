@@ -174,3 +174,8 @@ wsl --install -d openSUSE-Leap-15.6
 
 ## References
 Microsoft WSL Documentation:https://learn.microsoft.com/windows/wsl/install.
+
+## 🧑‍💻 Developer
+
+Abdulbaseer Serat  
+MS in Computer Sciences · Abasyn University · [GitHub](https://github.com/abdulbaseer-Serat) · [LinkedIn](https://linkedin.com/in/abdul-basir-serat-65b8201ab) · info.abdulbasir@gmail.com
