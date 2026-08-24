@@ -1,8 +1,8 @@
-[https://img.shields.io/badge/Field-black%20Windows%20Subsystem-red](https://img.shields.io/badge/Field-black%20Windows%20Subsystem-red)
-
 
 # windows 11 wsl installation guide.
 A complete step-by-step guide for installing Windows Subsystem for Linux (WSL2) on Windows 11.
+![Static Badge](https://img.shields.io/badge/Field-black%20Windows%20Subsystem-red)
+
 ## What is WSL?
 
 WSL (Windows Subsystem for Linux) is a Microsoft feature that allows you to run a real Linux environment directly inside Windows without creating a separate virtual machine or dual-boot setup. It lets you use Linux commands, tools, scripts, package managers, and applications alongside Windows.
