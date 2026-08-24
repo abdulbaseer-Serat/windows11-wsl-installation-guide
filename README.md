@@ -1,18 +1,5 @@
-![Field](https://img.shields.io/badge5555?style=flat-square
-![Cybersecurity](https://img.shields.io/badge/Cy5?style=flat-square
+https://img.shields.io/badge/Field-black%20Windows%20Subsystem-red
 
-![Project](https://img.shields.io/badge/Projectle=flat-square
-![Penetration Testing](https://img.shields.io/badge/Penetration%20Testing-039be5?style=flat//img.shields.io/badge/Weekstyle=flat-square
-https://img.shields.io/badge/02-8bc34a?style=flat-square
-
-https://img.shields.io/badge/Program-555555?style=flat-square
-![Networkwalks](https://img.shields.io/badge/c00?style=flat-square
-
-![OS](https://img.shields.io/badge/OS-555555?style=flate
-![Kali Linux](https://img.shields.io/badge/K27b0?style=flat-square
-
-https://img.shields.io/badge/Repository-555555?style=flat-square
-![GitHub](https://img.shields.io/badge/GitHub-000000t-square
 
 # windows 11 wsl installation guide.
 A complete step-by-step guide for installing Windows Subsystem for Linux (WSL2) on Windows 11.
